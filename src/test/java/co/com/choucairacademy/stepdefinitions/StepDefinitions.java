@@ -1,13 +1,15 @@
-package co.com.proyectobase.stepdefinitions;
+package co.com.choucairacademy.stepdefinitions;
 
-import co.com.proyectobase.tasks.Login;
-import co.com.proyectobase.tasks.OpenUp;
+import co.com.choucairacademy.tasks.Login;
+import co.com.choucairacademy.tasks.OpenUp;
+import co.com.choucairacademy.tasks.Search;
 import io.cucumber.java.Before;
 import io.cucumber.java.en.Given;
 import io.cucumber.java.en.Then;
 import io.cucumber.java.en.When;
 import net.serenitybdd.screenplay.actors.OnStage;
 import net.serenitybdd.screenplay.actors.OnlineCast;
+
 
 public class StepDefinitions {
 
@@ -25,11 +27,12 @@ public class StepDefinitions {
 
     }
 
-    @When("^he search for the course Recursos Automatizacion Bancolombia of the Choucair Academy Platform$")
-    public void he_search_for_the_course_recursos_automatizacion_bancolombia_of_the_choucair_academy_platform() {
-
+    @When("^he search for the course (.*) of the Choucair Academy Platform$")
+    public void he_search_for_the_course_recursos_automatizacion_bancolombia_of_the_choucair_academy_platform(String course) {
+        OnStage.theActorInTheSpotlight().attemptsTo(Search.the(course));
 
     }
+
     @Then("^he finds the course called resources Recursos Automatizacion Bancolombia$")
     public void he_finds_the_course_called_resources_recursos_automatizacion_bancolombia() {
 

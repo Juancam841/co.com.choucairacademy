@@ -1,6 +1,6 @@
-package co.com.proyectobase.tasks;
+package co.com.choucairacademy.tasks;
 
-import co.com.proyectobase.userinterface.ChoucairAcademyPage;
+import co.com.choucairacademy.userinterface.ChoucairAcademyPage;
 import net.serenitybdd.screenplay.Actor;
 import net.serenitybdd.screenplay.Task;
 import net.serenitybdd.screenplay.Tasks;

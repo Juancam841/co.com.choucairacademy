@@ -1,4 +1,4 @@
-package co.com.proyectobase.runners;
+package co.com.choucairacademy.runners;
 
 import io.cucumber.junit.CucumberOptions.SnippetType;
 import io.cucumber.junit.CucumberOptions;

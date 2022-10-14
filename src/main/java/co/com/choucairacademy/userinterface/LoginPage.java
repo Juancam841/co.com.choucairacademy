@@ -1,4 +1,4 @@
-package co.com.proyectobase.userinterface;
+package co.com.choucairacademy.userinterface;
 
 import net.serenitybdd.core.pages.PageObject;
 import net.serenitybdd.screenplay.targets.Target;
