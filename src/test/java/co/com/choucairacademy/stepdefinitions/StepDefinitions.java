@@ -1,5 +1,6 @@
 package co.com.choucairacademy.stepdefinitions;
 
+import co.com.choucairacademy.questions.Answer;
 import co.com.choucairacademy.tasks.Login;
 import co.com.choucairacademy.tasks.OpenUp;
 import co.com.choucairacademy.tasks.Search;
@@ -7,6 +8,7 @@ import io.cucumber.java.Before;
 import io.cucumber.java.en.Given;
 import io.cucumber.java.en.Then;
 import io.cucumber.java.en.When;
+import net.serenitybdd.screenplay.GivenWhenThen;
 import net.serenitybdd.screenplay.actors.OnStage;
 import net.serenitybdd.screenplay.actors.OnlineCast;
 
@@ -33,9 +35,9 @@ public class StepDefinitions {
 
     }
 
-    @Then("^he finds the course called resources Recursos Automatizacion Bancolombia$")
-    public void he_finds_the_course_called_resources_recursos_automatizacion_bancolombia() {
-
+    @Then("^he finds the course called resources (.*)$")
+    public void he_finds_the_course_called_resources_recursos_automatizacion_bancolombia(String question) {
+        OnStage.theActorInTheSpotlight().should(GivenWhenThen.seeThat(Answer.toThe(question)));
 
     }
 }
