@@ -11,7 +11,7 @@ import org.junit.runner.RunWith;
             tags = "@Scenario1",
             plugin ={"pretty"},
             features = "src/test/resources/features/feature.feature",
-            glue = "co.com.choucairacademy.stepdefinitions",
+            glue = {"co.com.choucairacademy.stepdefinitions", "co.com.choucairacademy.util"},
             snippets = SnippetType.CAMELCASE
     )
 

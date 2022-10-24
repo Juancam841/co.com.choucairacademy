@@ -1,12 +1,9 @@
 package co.com.choucairacademy.tasks;
 
-import co.com.choucairacademy.userinterface.SearchCoursePage;
-import co.com.choucairacademy.userinterface.Dashboard;
+import co.com.choucairacademy.interactions.EnterDataCourse;
 import net.serenitybdd.screenplay.Actor;
 import net.serenitybdd.screenplay.Task;
 import net.serenitybdd.screenplay.Tasks;
-import net.serenitybdd.screenplay.actions.Click;
-import net.serenitybdd.screenplay.actions.Enter;
 
 public class Search implements Task {
 
@@ -23,10 +20,8 @@ public class Search implements Task {
     @Override
     public <T extends Actor> void performAs(T actor) {
         actor.attemptsTo(
-                Click.on(Dashboard.CLICKU_HYPER),
-                Enter.theValue(course).into(SearchCoursePage.INPUT_COURSE),
-                Click.on(SearchCoursePage.BUTTON_GO),
-                Click.on(SearchCoursePage.NAME_COURSE)
+                EnterDataCourse.course(course)
+
         );
     }
 }

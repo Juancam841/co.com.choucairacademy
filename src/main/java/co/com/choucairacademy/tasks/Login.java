@@ -1,25 +1,27 @@
 package co.com.choucairacademy.tasks;
 
-import co.com.choucairacademy.userinterface.LoginPage;
+import co.com.choucairacademy.interactions.EnterDataLogin;
 import net.serenitybdd.screenplay.Actor;
 import net.serenitybdd.screenplay.Task;
 import net.serenitybdd.screenplay.Tasks;
-import net.serenitybdd.screenplay.actions.Click;
-import net.serenitybdd.screenplay.actions.Enter;
 
 public class Login implements Task {
+    private final String user;
+    private final String pass;
 
-    public static Login onThePage() {
-        return Tasks.instrumented(Login.class);
+    public Login(String user, String pass) {
+        this.user = user;
+        this.pass = pass;
+    }
+
+    public static Login onThePage(String user, String pass) {
+        return Tasks.instrumented(Login.class, user, pass);
     }
 
     @Override
     public <T extends Actor> void performAs(T actor) {
         actor.attemptsTo(
-                Click.on(LoginPage.LOGIN_BUTTON),
-                Enter.theValue("jvillac").into(LoginPage.INPUT_USER),
-                Enter.theValue("Choucair2022*").into(LoginPage.INPUT_PASS),
-                Click.on(LoginPage.ENTER_BUTTON)
-                );
+                EnterDataLogin.login(user, pass));
+
     }
 }

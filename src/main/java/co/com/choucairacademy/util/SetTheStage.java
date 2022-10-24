@@ -1,4 +1,4 @@
-package co.com.choucairacademy.conf;
+package co.com.choucairacademy.util;
 
 import io.cucumber.java.Before;
 import net.serenitybdd.screenplay.actors.OnStage;

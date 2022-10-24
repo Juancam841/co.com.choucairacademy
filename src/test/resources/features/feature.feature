@@ -4,12 +4,12 @@ Feature: Academy Choucair
 
   @Scenario1
   Scenario Outline: Search for a automation course
-    Given than brandon wants to learn automation at the academy Choucair
+    Given than brandon wants to learn automation at the academy Choucair <user> <pass>
     When he search for the course <course> of the Choucair Academy Platform
     Then he finds the course called resources <course>
 
     Examples:
-      | course                    |
-      | Turbito Testing Servicios |
+      | course                    | user    | pass          |
+      | Turbito Testing Servicios | jvillac | Choucair2022* |
 
 
